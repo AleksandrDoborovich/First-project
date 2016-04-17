@@ -27,6 +27,7 @@ divTag=document.createElement("div");
 mainEl.appendChild(divTag);
 deleteBut=document.createElement("img");
 deleteBut.src="image/delete1.png";
+deleteBut.onclick=deleteOne;
 divTag.appendChild(deleteBut);
 
 checkBut=document.createElement("input");
@@ -41,6 +42,8 @@ divTag.appendChild(pEl);
 newEl=document.createTextNode(myGoal.value);
 pEl.appendChild(newEl);
 
+
+myGoal.value="";
 };
 
 
@@ -66,4 +69,14 @@ function DeleteGoals() {
 				if (a[i].checked){mainEl.removeChild(b[i])}
 			}	
 
+}
+
+
+
+
+
+function deleteOne() {
+var b=document.getElementsByTagName("div");
+var num=$('img').index(this);
+mainEl.removeChild(b[num+1]);
 }
